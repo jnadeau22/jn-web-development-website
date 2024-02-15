@@ -1,0 +1,9 @@
+@mixin linearBackground() {
+    background-color: #1b1b1b;
+    background: linear-gradient(36deg, #33130e00 0%, #e63e2133 100%);
+}
+
+@mixin linearBorder() {
+    background: #262626;
+    background: linear-gradient(36deg, #33130e00 0%, #e63e21 100%);
+}
