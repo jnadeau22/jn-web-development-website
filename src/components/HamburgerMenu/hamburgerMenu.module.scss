@@ -1,0 +1,40 @@
+.hamburgerMenu {
+    @apply relative h-4 w-6 cursor-pointer;
+
+    &__upperLine,
+    &__middleLine,
+    &__lowerLine {
+        @apply absolute w-full h-[2px] bg-shark-50 rounded-full transition-all duration-300 ease-in-out;
+    }
+
+    &__upperLine {
+        top: 0;
+
+        &_open {
+            @apply hamburgerMenu__upperLine;
+            transform: rotate(45deg);
+            top: 50%;
+        }
+    }
+
+    &__middleLine {
+        top: 50%;
+        transform: translateY(-50%);
+
+        &_open {
+            @apply hamburgerMenu__middleLine;
+            opacity: 0;
+        }
+    }
+
+    &__lowerLine {
+        top: 100%;
+        transform: translateY(-100%);
+
+        &_open {
+            @apply hamburgerMenu__lowerLine;
+            transform: rotate(-45deg);
+            top: 50%;
+        }
+    }
+}
