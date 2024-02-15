@@ -12,6 +12,8 @@ i18n.use(Backend)
         interpolation: {
             escapeValue: false,
         },
+        defaultNS: 'common',
+        ns: ['common'],
     });
 
 export default i18n;
