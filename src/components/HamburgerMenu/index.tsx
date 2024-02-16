@@ -3,11 +3,13 @@ import classes from './hamburgerMenu.module.scss';
 interface HamburgerMenuProps {
     isOpen: boolean;
     handleMenuClick: () => void;
+    hidden?: boolean;
 }
 
 export default function HamburgerMenu({
     isOpen,
     handleMenuClick,
+    hidden = false,
 }: HamburgerMenuProps) {
     const upperLineClass = isOpen
         ? classes.hamburgerMenu__upperLine_open
@@ -21,7 +23,7 @@ export default function HamburgerMenu({
 
     return (
         <button
-            className={classes.hamburgerMenu}
+            className={hidden ? 'hidden' : classes.hamburgerMenu}
             onClick={handleMenuClick}>
             <div className={upperLineClass}></div>
             <div className={middleLineClass}></div>
