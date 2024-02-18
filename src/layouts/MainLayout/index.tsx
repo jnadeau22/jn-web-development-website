@@ -7,11 +7,10 @@ export default function MainLayout() {
     return (
         <div className={classes.mainLayout}>
             <div className={classes.mainLayout__content}>
-            <Navbar />
-            <main>
-                Main
-                <Outlet />
-            </main>
+                <Navbar />
+                <main>
+                    <Outlet />
+                </main>
             </div>
         </div>
     );
