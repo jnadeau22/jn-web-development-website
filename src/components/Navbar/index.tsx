@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
 import classes from './Navbar.module.scss';
@@ -8,19 +9,12 @@ import { useWindowWidth } from '../../hooks';
 import { Pages, WindowWidths } from '../../types';
 
 export default function Navbar() {
-    const NAV_LINKS = [
-        { to: Pages.HOME, label: 'Home' },
-        { to: Pages.CONTACT, label: 'Contact' },
-    ];
-    const navLinkIsActive = (to: string) => to === window.location.pathname;
-
+    // Hooks
+    const { t } = useTranslation('navbar');
     const windowWidth = useWindowWidth();
 
+    // State
     const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
-    const handleMenuClick = () => {
-        setIsMenuOpen(!isMenuOpen);
-    };
-
     const [navLinksClass, setNavLinksClass] = useState<string>(() => {
         if (windowWidth > WindowWidths.MD) {
             return classes.navbar__navLinks;
@@ -28,6 +22,14 @@ export default function Navbar() {
 
         return classes.navbar__navLinksMenuClose;
     });
+
+    // Functions
+    const handleMenuClick = () => {
+        setIsMenuOpen(!isMenuOpen);
+    };
+    const navLinkIsActive = (to: string) => to === window.location.pathname;
+
+    // Lifecycle hooks
     useEffect(() => {
         if (windowWidth > WindowWidths.MD) {
             setNavLinksClass(classes.navbar__navLinks);
@@ -37,6 +39,12 @@ export default function Navbar() {
             setNavLinksClass(classes.navbar__navLinksMenuClosed);
         }
     }, [windowWidth, isMenuOpen]);
+
+    // Constants
+    const NAV_LINKS = [
+        { to: Pages.HOME, label: t('home') },
+        { to: Pages.CONTACT, label: t('contact') },
+    ];
 
     return (
         <nav className={classes.navbar}>
