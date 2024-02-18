@@ -1,7 +1,9 @@
+import { HeaderLayout } from '../../layouts';
+
 const HomeView = () => {
     return (
         <div>
-            <h1>HomeView</h1>
+            <HeaderLayout />
         </div>
     );
 };

@@ -3,6 +3,9 @@ export default {
     content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
     theme: {
         colors: {
+            borderColor: {
+                default: '#262626',
+            },
             woodsmoke: {
                 50: '#f6f6f6',
                 100: '#e7e7e7',
