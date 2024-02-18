@@ -4,24 +4,17 @@ import { Link } from 'react-router-dom';
 import classes from './Navbar.module.scss';
 import { HamburgerMenu } from '..';
 import { logo, logoMini } from '../../assets';
-import { WindowWidths } from '../../types';
+import { useWindowWidth } from '../../hooks';
+import { Pages, WindowWidths } from '../../types';
 
 export default function Navbar() {
-    const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
-    useEffect(() => {
-        const handleResize = () => {
-            setWindowWidth(window.innerWidth);
-            if (windowWidth > WindowWidths.MD) {
-                setIsMenuOpen(false);
-                setNavLinksClass(classes.navbar__navLinks);
-            }
-        };
+    const NAV_LINKS = [
+        { to: Pages.HOME, label: 'Home' },
+        { to: Pages.CONTACT, label: 'Contact' },
+    ];
+    const navLinkIsActive = (to: string) => to === window.location.pathname;
 
-        window.addEventListener('resize', handleResize);
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
-    });
+    const windowWidth = useWindowWidth();
 
     const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
     const handleMenuClick = () => {
@@ -68,12 +61,21 @@ export default function Navbar() {
                 hidden={windowWidth > WindowWidths.MD}
             />
             <ul className={navLinksClass}>
-                <li className={classes.navbar__navLink}>
-                    <Link to='/'>Home</Link>
-                </li>
-                <li className={classes.navbar__navLink}>
-                    <Link to='/contact'>Contact</Link>
-                </li>
+                {NAV_LINKS.map(({ to, label }) => (
+                    <li
+                        className={classes.navbar__navLink}
+                        key={to}>
+                        <Link
+                            to={to}
+                            className={
+                                navLinkIsActive(to)
+                                    ? classes.navbar__active
+                                    : undefined
+                            }>
+                            {label}
+                        </Link>
+                    </li>
+                ))}
             </ul>
         </nav>
     );

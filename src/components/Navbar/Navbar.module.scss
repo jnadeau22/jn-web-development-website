@@ -33,4 +33,8 @@
         @apply navbar__navLinksMenuClosed;
         @apply translate-x-0;
     }
+
+    &__active {
+        @apply text-pomegranate-500;
+    }
 }
