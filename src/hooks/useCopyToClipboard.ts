@@ -6,9 +6,12 @@ const useCopyToClipboard = () => {
 
     const copyToClipboard = useCallback(async (text: string) => {
         try {
+            setHasError(false);
+            setIsCopied(false);
             await navigator.clipboard.writeText(text);
             setIsCopied(true);
         } catch (error) {
+            setIsCopied(false);
             setHasError(true);
         }
     }, []);
