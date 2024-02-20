@@ -12,6 +12,11 @@
         "fix": "npm run lint -- --fix && npm run format"
     },
     "dependencies": {
+        "@fortawesome/fontawesome-svg-core": "^6.5.1",
+        "@fortawesome/free-brands-svg-icons": "^6.5.1",
+        "@fortawesome/free-regular-svg-icons": "^6.5.1",
+        "@fortawesome/free-solid-svg-icons": "^6.5.1",
+        "@fortawesome/react-fontawesome": "^0.2.0",
         "i18next": "^23.8.2",
         "i18next-browser-languagedetector": "^7.2.0",
         "i18next-http-backend": "^2.4.3",

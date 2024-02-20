@@ -6,6 +6,10 @@ export default {
             borderColor: {
                 default: '#262626',
             },
+            textColor: {
+                default: '#ffffff',
+                subText: '#c0c0c0',
+            },
             woodsmoke: {
                 50: '#f6f6f6',
                 100: '#e7e7e7',
