@@ -1,9 +1,10 @@
-import { HeaderLayout } from '../../layouts';
+import { ExperiencesLayout, HeaderLayout } from '../../layouts';
 
 const HomeView = () => {
     return (
         <div>
             <HeaderLayout />
+            <ExperiencesLayout />
         </div>
     );
 };
