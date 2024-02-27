@@ -1,13 +1,17 @@
 import { faCopy } from '@fortawesome/free-regular-svg-icons';
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faCheck, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useTranslation } from 'react-i18next';
 
 import classes from './header.module.scss';
-import { Badge, Button, Card } from '..';
+import { Badge, Button, Card } from '../../components';
+import useCopyToClipboard from '../../hooks/useCopyToClipboard';
 
 const Header = () => {
     const { t } = useTranslation('header');
+    const { copyToClipboard, isCopied } = useCopyToClipboard({
+        isCopiedTimeout: 2000,
+    });
     return (
         <header className={classes.headerLayout}>
             <Card>
@@ -32,6 +36,17 @@ const Header = () => {
                             endIcon={<FontAwesomeIcon icon={faCopy} />}
                             text={t('copyEmail')}
                             variant='outlined'
+                            onClick={() =>
+                                copyToClipboard('jonathannadeau.jn@gmail.com')
+                            }
+                        />
+                        <FontAwesomeIcon
+                            icon={faCheck}
+                            className={
+                                isCopied
+                                    ? classes.headerLayout__checkIcon_copied
+                                    : classes.headerLayout__checkIcon
+                            }
                         />
                     </div>
                 </div>

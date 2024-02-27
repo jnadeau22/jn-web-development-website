@@ -1,9 +1,9 @@
-import { Header } from '../../components';
+import { HeaderLayout } from '../../layouts';
 
 const HomeView = () => {
     return (
         <div>
-            <Header />
+            <HeaderLayout />
         </div>
     );
 };
