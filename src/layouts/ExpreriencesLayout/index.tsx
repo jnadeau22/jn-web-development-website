@@ -25,8 +25,17 @@ const EXPERIENCES = [
 ];
 
 const ExperiencesLayout = () => {
-    const { t } = useTranslation('experiences');
+    const {
+        t,
+        i18n: { language },
+    } = useTranslation('experiences');
 
+    const getDate = (date: string) => {
+        return new Date(date).toLocaleString(language, {
+            year: 'numeric',
+            month: 'long',
+        });
+    };
     return (
         <section className={classes.experiencesLayout}>
             <Card>
@@ -55,7 +64,8 @@ const ExperiencesLayout = () => {
                                 className={
                                     classes.experiencesLayout__experience_dates
                                 }>
-                                {experience.startDate} - {experience.endDate}
+                                {getDate(experience.startDate)} -{' '}
+                                {getDate(experience.endDate)}
                             </p>
                         </li>
                     ))}

@@ -18,7 +18,7 @@
         }
 
         &_title {
-            @apply whitespace-nowrap text-ellipsis overflow-clip text-textColor-default;
+            @apply text-textColor-default mb-1;
         }
     }
 }

@@ -1,8 +1,9 @@
+import classes from './homeView.module.scss';
 import { ExperiencesLayout, HeaderLayout } from '../../layouts';
 
 const HomeView = () => {
     return (
-        <div>
+        <div className={classes.homeView}>
             <HeaderLayout />
             <ExperiencesLayout />
         </div>
