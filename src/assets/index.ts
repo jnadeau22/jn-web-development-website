@@ -1,3 +1,15 @@
 export { default as logo_vertical } from './logo_vertical.svg';
 export { default as logo_horizontal } from './logo_horizontal.svg';
 export { default as logo_mini } from './logo_mini.svg';
+export { default as logo_css } from './logo_css.svg';
+export { default as logo_html } from './logo_html.svg';
+export { default as logo_javascript } from './logo_javascript.svg';
+export { default as logo_mongodb } from './logo_mongodb.svg';
+export { default as logo_mysql } from './logo_mysql.svg';
+export { default as logo_nodejs } from './logo_nodejs.svg';
+export { default as logo_react } from './logo_react.svg';
+export { default as logo_redux } from './logo_redux.svg';
+export { default as logo_sass } from './logo_sass.svg';
+export { default as logo_tailwindcss } from './logo_tailwind.svg';
+export { default as logo_typescript } from './logo_typescript.svg';
+export { default as logo_vue } from './logo_vue.svg';
