@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 import classes from './Navbar.module.scss';
 import { HamburgerMenu } from '..';
-import { logo, logoMini } from '../../assets';
+import { logo_mini, logo_vertical } from '../../assets';
 import { useWindowWidth } from '../../hooks';
 import { Pages, WindowWidths } from '../../types';
 
@@ -52,12 +52,12 @@ export default function Navbar() {
                 to='/'
                 className={classes.navbar__logoContainer}>
                 <img
-                    src={logo}
+                    src={logo_vertical}
                     alt='logo'
                     className={classes.navbar__logo}
                 />
                 <img
-                    src={logoMini}
+                    src={logo_mini}
                     alt='logo'
                     className={classes.navbar__logoMini}
                 />
