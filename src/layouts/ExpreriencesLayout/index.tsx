@@ -9,18 +9,21 @@ const EXPERIENCES = [
         company: 'Iconnek',
         startDate: '2023-11-06',
         endDate: '2024-02-06',
+        companyLink: 'https://www.iconnek.io/',
     },
     {
         title: 'Frontend Developer',
         company: 'Comunik',
         startDate: '2022-09-06',
         endDate: '2023-09-06',
+        companyLink: 'https://comunik.ca/',
     },
     {
         title: 'AEC Développement Web Frontend',
         company: 'Cégep de Trois-Rivières',
         startDate: '2021-10-01',
         endDate: '2022-06-01',
+        companyLink: 'https://www.cegeptr.qc.ca/',
     },
 ];
 
@@ -45,28 +48,34 @@ const ExperiencesLayout = () => {
                 </h2>
                 <ul className={classes.experiencesLayout__experiences}>
                     {EXPERIENCES.map((experience, index) => (
-                        <li
-                            key={index}
-                            className={classes.experiencesLayout__experience}>
-                            <h3
+                        <li key={index}>
+                            <a
+                                href={experience.companyLink}
+                                target='_blank'
+                                rel='noreferrer'
                                 className={
-                                    classes.experiencesLayout__experience_title
+                                    classes.experiencesLayout__experience
                                 }>
-                                {experience.title}
-                            </h3>
-                            <p
-                                className={
-                                    classes.experiencesLayout__experience_company
-                                }>
-                                {experience.company}
-                            </p>
-                            <p
-                                className={
-                                    classes.experiencesLayout__experience_dates
-                                }>
-                                {getDate(experience.startDate)} -{' '}
-                                {getDate(experience.endDate)}
-                            </p>
+                                <h3
+                                    className={
+                                        classes.experiencesLayout__experience_title
+                                    }>
+                                    {experience.title}
+                                </h3>
+                                <p
+                                    className={
+                                        classes.experiencesLayout__experience_company
+                                    }>
+                                    {experience.company}
+                                </p>
+                                <p
+                                    className={
+                                        classes.experiencesLayout__experience_dates
+                                    }>
+                                    {getDate(experience.startDate)} -{' '}
+                                    {getDate(experience.endDate)}
+                                </p>
+                            </a>
                         </li>
                     ))}
                 </ul>
