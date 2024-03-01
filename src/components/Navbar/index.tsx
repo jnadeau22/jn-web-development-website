@@ -1,10 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
 import classes from './Navbar.module.scss';
 import { HamburgerMenu } from '..';
 import { logo_mini, logo_vertical } from '../../assets';
+import { NavMenuContext } from '../../contexts';
 import { useWindowWidth } from '../../hooks';
 import { Pages, WindowWidths } from '../../types';
 
@@ -14,7 +15,7 @@ export default function Navbar() {
     const windowWidth = useWindowWidth();
 
     // State
-    const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+    const { isMenuOpen, setIsMenuOpen } = useContext(NavMenuContext);
     const [navLinksClass, setNavLinksClass] = useState<string>(() => {
         if (windowWidth > WindowWidths.MD) {
             return classes.navbar__navLinks;
