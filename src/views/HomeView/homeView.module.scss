@@ -1,7 +1,7 @@
 .homeView {
-    @apply grid gap-4 lg:grid-cols-2;
+    @apply grid gap-4 lg:grid-cols-2 items-stretch;
 
-    &__headerLayoutContainer {
+    &__twoCols {
         @apply col-span-1 lg:col-span-2;
     }
 }
