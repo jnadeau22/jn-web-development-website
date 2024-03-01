@@ -1,0 +1,33 @@
+.projectsLayout {
+    &__title {
+        @apply text-textColor-subText mb-8;
+    }
+    &__projects {
+        @apply flex flex-wrap justify-center gap-4;
+    }
+
+    &__project {
+        @apply w-60 relative inline-block;
+
+        &::before {
+            content: '';
+            @apply absolute top-0 left-0 w-full h-full bg-woodsmoke-950 bg-opacity-65 transition-colors duration-300 ease-in-out;
+
+            &:hover {
+                @apply bg-opacity-50;
+            }
+        }
+
+        &_thumbnail {
+            @apply w-full;
+        }
+
+        &_content {
+            @apply absolute top-0 left-0 right-0 bottom-0 flex flex-col justify-center items-center p-4 text-center;
+        }
+
+        &_title {
+            @apply text-center text-xl mb-2;
+        }
+    }
+}

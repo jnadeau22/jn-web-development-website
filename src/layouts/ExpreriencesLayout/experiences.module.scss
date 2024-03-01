@@ -2,9 +2,6 @@
     &__title {
         @apply text-textColor-subText flex items-center mb-8;
     }
-    &__bullet {
-        @apply inline-block w-2 h-2 bg-woodsmoke-50 rounded-full mr-2;
-    }
 
     &__experiences {
         @apply flex flex-col divide-y divide-woodsmoke-900;

@@ -68,7 +68,7 @@ const LOGOS = [
 const StackLayout = () => {
     return (
         <section className={classes.stackLayout}>
-            <Card>
+            <Card fullHight>
                 <div className={classes.stackLayout__content}>
                     {LOGOS.map((logo, index) => (
                         <img

@@ -5,3 +5,7 @@
 body {
     @apply text-woodsmoke-50;
 }
+
+.bullet {
+    @apply inline-block w-2 h-2 bg-woodsmoke-50 rounded-full mr-2;
+}

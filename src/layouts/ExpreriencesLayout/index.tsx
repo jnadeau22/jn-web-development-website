@@ -41,9 +41,9 @@ const ExperiencesLayout = () => {
     };
     return (
         <section className={classes.experiencesLayout}>
-            <Card>
+            <Card fullHight>
                 <h2 className={classes.experiencesLayout__title}>
-                    <span className={classes.experiencesLayout__bullet}></span>
+                    <span className='bullet'></span>
                     {t('title')}
                 </h2>
                 <ul className={classes.experiencesLayout__experiences}>

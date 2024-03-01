@@ -13,3 +13,4 @@ export { default as logo_tailwindcss } from './logo_tailwind.svg';
 export { default as logo_typescript } from './logo_typescript.svg';
 export { default as logo_vertical } from './logo_vertical.svg';
 export { default as logo_vue } from './logo_vue.svg';
+export { default as thumbnail_lameuteamary } from './thumbnail_lameuteamary.png';
