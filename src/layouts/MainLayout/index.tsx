@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { Outlet } from 'react-router-dom';
 
 import classes from './mainLayout.module.scss';
-import { Navbar } from '../../components';
+import { Footer, Navbar } from '../../components';
 import { NavMenuContext } from '../../contexts';
 
 export default function MainLayout() {
@@ -19,6 +19,7 @@ export default function MainLayout() {
                 <main>
                     <Outlet />
                 </main>
+                <Footer />
             </div>
         </div>
     );
