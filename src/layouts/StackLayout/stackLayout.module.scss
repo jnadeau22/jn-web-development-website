@@ -1,0 +1,5 @@
+.stackLayout {
+    &__content {
+        @apply grid grid-cols-3 gap-12 items-center sm:grid-cols-4 lg:grid-cols-3 xl:grid-cols-4;
+    }
+}

@@ -1,3 +1,4 @@
 export { default as ExperiencesLayout } from './ExpreriencesLayout';
 export { default as HeaderLayout } from './HeaderLayout';
 export { default as MainLayout } from './MainLayout';
+export { default as StackLayout } from './StackLayout';
