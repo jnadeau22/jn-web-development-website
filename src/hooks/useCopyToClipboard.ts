@@ -14,7 +14,18 @@ const useCopyToClipboard = ({
         try {
             setHasError(false);
             setIsCopied(false);
-            await navigator.clipboard.writeText(text);
+
+            if (!navigator.clipboard) {
+                const element = document.createElement('textarea');
+                element.value = text;
+                document.body.appendChild(element);
+                element.select();
+                document.execCommand('copy');
+                document.body.removeChild(element);
+            } else {
+                await navigator.clipboard.writeText(text);
+            }
+
             setIsCopied(true);
 
             if (isCopiedTimeout) {
