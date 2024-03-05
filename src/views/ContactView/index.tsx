@@ -1,7 +1,10 @@
+import classes from './contactView.module.scss';
+import { ContactFormLayout } from '../../layouts';
+
 const ContactView = () => {
     return (
-        <div>
-            <h1>Contact</h1>
+        <div className={classes.contactView}>
+            <ContactFormLayout />
         </div>
     );
 };

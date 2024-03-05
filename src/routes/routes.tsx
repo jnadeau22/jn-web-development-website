@@ -9,7 +9,7 @@ export default [
         element: <MainLayout />,
         children: [
             { path: '/', element: <HomeView /> },
-            { path: '/contact', element: ContactView },
+            { path: '/contact', element: <ContactView /> },
         ],
     },
 ] as RouteObject[];
