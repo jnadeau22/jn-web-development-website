@@ -14,7 +14,7 @@
     }
 
     &__badge {
-        @apply order-1 justify-self-end;
+        @apply order-1;
     }
 
     &__icon {
@@ -26,6 +26,6 @@
     }
 
     &__navLinks {
-        @apply order-2 mt-8 sm:order-3 sm:self-start sm:justify-self-end text-end flex flex-col gap-2 lg:justify-self-start lg:text-start;
+        @apply order-2 mt-8 sm:order-3 sm:self-start sm:justify-self-end sm:text-end flex flex-col gap-2 lg:justify-self-start lg:text-start;
     }
 }
